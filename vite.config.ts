@@ -34,6 +34,15 @@ export default defineConfig(({ mode }) => {
             sourcemap: true
           }
         }
+      },
+      worker: {
+        format: 'es',
+        plugins: [
+          typescript({
+            tsconfig: './tsconfig.json',
+            include: ['./src/editor/**']
+          })
+        ]
       }
     }
   }

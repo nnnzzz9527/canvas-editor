@@ -6,6 +6,7 @@ import {
   IAreaInfo,
   IGetAreaValueOption,
   IGetAreaValueResult,
+  IInsertAreaElementListOption,
   IInsertAreaOption,
   ISetAreaPropertiesOption
 } from '../../../interface/Area'
@@ -236,5 +237,24 @@ export class Area {
       isCompute,
       isSetCursor: false
     })
+  }
+
+  public insertElementList(payload: IInsertAreaElementListOption) {
+    const areaId = payload.id || this.getActiveAreaId()
+    if (!areaId) return
+    const areaInfo = this.areaInfoMap.get(areaId)
+    if (!areaInfo) return
+    if (!areaInfo.area) {
+      areaInfo.area = {}
+    }
+
+    for (let i = 0; i < payload.elementList.length; i++) {
+      const element = payload.elementList[i]
+      element.areaId = areaId
+      element.area = areaInfo.area
+      element.areaIndex = areaInfo.elementList.length + i
+    }
+
+    this.draw.insertElementList(payload.elementList, payload.options)
   }
 }

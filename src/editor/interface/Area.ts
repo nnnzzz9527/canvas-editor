@@ -1,6 +1,6 @@
 import { AreaMode } from '../dataset/enum/Area'
 import { LocationPosition } from '../dataset/enum/Common'
-import { IElement, IElementPosition } from './Element'
+import { IElement, IElementPosition, IInsertElementListOption } from './Element'
 import { IPlaceholder } from './Placeholder'
 
 export interface IAreaBasic {
@@ -32,6 +32,12 @@ export interface IInsertAreaOption {
 export interface ISetAreaPropertiesOption {
   id?: string
   properties: IArea
+}
+
+export interface IInsertAreaElementListOption {
+  id?: string
+  elementList: IElement[]
+  options?: IInsertElementListOption
 }
 
 export interface IGetAreaValueOption {

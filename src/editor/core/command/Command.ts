@@ -82,6 +82,7 @@ export class Command {
   public executeSetAreaBadge: CommandAdapt['setAreaBadge']
   public executeInsertElementList: CommandAdapt['insertElementList']
   public executeInsertArea: CommandAdapt['insertArea']
+  public executeInsertAreaElementList: CommandAdapt['insertAreaElementList']
   public executeSetAreaProperties: CommandAdapt['setAreaProperties']
   public executeLocationArea: CommandAdapt['locationArea']
   public executeAppendElementList: CommandAdapt['appendElementList']
@@ -230,6 +231,7 @@ export class Command {
     this.getAreaValue = adapt.getAreaValue.bind(adapt)
     this.executeInsertArea = adapt.insertArea.bind(adapt)
     this.executeSetAreaProperties = adapt.setAreaProperties.bind(adapt)
+    this.executeInsertAreaElementList = adapt.insertAreaElementList.bind(adapt)
     this.executeLocationArea = adapt.locationArea.bind(adapt)
     // 通用
     this.executeInsertElementList = adapt.insertElementList.bind(adapt)

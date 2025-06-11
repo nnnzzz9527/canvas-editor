@@ -120,6 +120,7 @@ import { Zone } from '../zone/Zone'
 import {
   IGetAreaValueOption,
   IGetAreaValueResult,
+  IInsertAreaElementListOption,
   IInsertAreaOption,
   ISetAreaPropertiesOption
 } from '../../interface/Area'
@@ -2522,6 +2523,10 @@ export class CommandAdapt {
 
   public setAreaProperties(payload: ISetAreaPropertiesOption) {
     this.draw.getArea().setAreaProperties(payload)
+  }
+
+  public insertAreaElementList(payload: IInsertAreaElementListOption) {
+    this.draw.getArea().insertElementList(payload)
   }
 
   public locationArea(areaId: string) {

@@ -81,6 +81,11 @@ export class Area {
     const { id, value, area, position } = payload
     if (position === LocationPosition.BEFORE) {
       this.range.setRange(0, 0)
+    } else if (position === LocationPosition.CURRENT) {
+      this.range.setRange(
+        this.range.getRange().startIndex,
+        this.range.getRange().endIndex
+      )
     } else {
       const elementList = this.draw.getOriginalMainElementList()
       const lastIndex = elementList.length - 1

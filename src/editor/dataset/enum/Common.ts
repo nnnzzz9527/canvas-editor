@@ -21,7 +21,8 @@ export enum LocationPosition {
   BEFORE = 'before',
   AFTER = 'after',
   OUTER_BEFORE = 'outer-before',
-  OUTER_AFTER = 'outer-after'
+  OUTER_AFTER = 'outer-after',
+  CURRENT = 'current'
 }
 
 export enum FlexDirection {

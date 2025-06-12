@@ -27,6 +27,7 @@ export interface IInsertAreaOption {
   area: IArea
   value: IElement[]
   position?: LocationPosition
+  isSubmitHistory?: boolean
 }
 
 export interface ISetAreaPropertiesOption {

@@ -10,6 +10,9 @@ import { IPositionContext } from './Position'
 import { ITextDecoration } from './Text'
 
 export interface IRangeStyle {
+  elementId: string | null
+  areaId: string | null
+  conceptId: string | null
   type: ElementType | null
   undo: boolean
   redo: boolean

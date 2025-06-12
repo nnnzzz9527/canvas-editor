@@ -501,6 +501,9 @@ export class RangeManager {
       curElement = this.getRangeAnchorStyle(elementList, index)
     }
     if (!curElement) return
+    const elementId = curElement.id || null
+    const areaId = curElement.areaId || null
+    const conceptId = curElement.control?.conceptId || null
     // 选取元素列表
     const curElementList = this.getSelection() || [curElement]
     // 类型
@@ -532,6 +535,9 @@ export class RangeManager {
     // 扩展字段
     const extension = curElement.extension ?? null
     const rangeStyle: IRangeStyle = {
+      elementId,
+      areaId,
+      conceptId,
       type,
       undo,
       redo,
@@ -574,6 +580,9 @@ export class RangeManager {
     const undo = this.historyManager.isCanUndo()
     const redo = this.historyManager.isCanRedo()
     const rangeStyle: IRangeStyle = {
+      elementId: null,
+      areaId: null,
+      conceptId: null,
       type: null,
       undo,
       redo,

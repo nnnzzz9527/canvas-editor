@@ -93,15 +93,20 @@ export class Area {
       this.range.setRange(lastIndex, lastIndex)
     }
     const areaId = id || getUUID()
-    this.draw.insertElementList([
+    this.draw.insertElementList(
+      [
+        {
+          type: ElementType.AREA,
+          value: '',
+          areaId,
+          valueList: value,
+          area: deepClone(area)
+        }
+      ],
       {
-        type: ElementType.AREA,
-        value: '',
-        areaId,
-        valueList: value,
-        area: deepClone(area)
+        isSubmitHistory: payload.isSubmitHistory
       }
-    ])
+    )
     return areaId
   }
 

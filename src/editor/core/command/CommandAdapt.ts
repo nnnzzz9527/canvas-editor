@@ -1842,6 +1842,7 @@ export class CommandAdapt {
   }
 
   public deleteElementById(payload: IDeleteElementByIdOption) {
+    //debugger
     const { id, conceptId } = payload
     if (!id && !conceptId) return
     let isExistDelete = false
@@ -1859,9 +1860,14 @@ export class CommandAdapt {
             }
           }
         }
+        console.log('id=' + element.id + '|conceptId=' + element.conceptId)
+        console.log(element)
         if (
           (id && element.id === id) ||
-          (conceptId && element.conceptId === conceptId)
+          (conceptId && element.conceptId === conceptId) ||
+          (conceptId &&
+            element.control &&
+            element.control?.conceptId === conceptId)
         ) {
           isExistDelete = true
           elementList.splice(i, 1)

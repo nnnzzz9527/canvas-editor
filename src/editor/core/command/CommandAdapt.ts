@@ -64,6 +64,7 @@ import {
   IElementPosition,
   IElementStyle,
   IGetElementByIdOption,
+  IHeaderMainFooterElementList,
   IInsertElementListOption,
   IUpdateElementByIdOption
 } from '../../interface/Element'
@@ -1930,6 +1931,24 @@ export class CommandAdapt {
     return zipElementList(result, {
       extraPickAttrs: ['id']
     })
+  }
+
+  public getElementList(): IHeaderMainFooterElementList {
+    const headerElementList = zipElementList(this.draw.getHeaderElementList(), {
+      extraPickAttrs: ['id']
+    })
+    const mainElementList = zipElementList(this.draw.getElementList(), {
+      extraPickAttrs: ['id', 'areaId', 'area'],
+      isClassifyArea: true
+    })
+    const footerElementList = zipElementList(this.draw.getFooterElementList(), {
+      extraPickAttrs: ['id']
+    })
+    return {
+      header: headerElementList,
+      main: mainElementList,
+      footer: footerElementList
+    }
   }
 
   public setValue(payload: Partial<IEditorData>, options?: ISetValueOption) {

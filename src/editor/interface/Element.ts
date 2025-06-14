@@ -146,6 +146,12 @@ export interface IAreaElement {
   area?: IArea
 }
 
+export type IHeaderMainFooterElementList = {
+  header: IElement[]
+  main: IElement[]
+  footer: IElement[]
+}
+
 export type IElement = IElementBasic &
   IElementStyle &
   IElementGroup &

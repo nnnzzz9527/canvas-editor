@@ -1938,7 +1938,14 @@ export class CommandAdapt {
       extraPickAttrs: ['id']
     })
     const mainElementList = zipElementList(this.draw.getElementList(), {
-      extraPickAttrs: ['id', 'areaId', 'area'],
+      extraPickAttrs: [
+        'id',
+        'areaId',
+        'area',
+        'conceptId',
+        'controlId',
+        'control'
+      ],
       isClassifyArea: true
     })
     const footerElementList = zipElementList(this.draw.getFooterElementList(), {

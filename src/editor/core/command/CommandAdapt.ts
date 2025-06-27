@@ -1843,7 +1843,6 @@ export class CommandAdapt {
   }
 
   public deleteElementById(payload: IDeleteElementByIdOption) {
-    //debugger
     const { id, conceptId } = payload
     if (!id && !conceptId) return
     let isExistDelete = false
